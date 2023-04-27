@@ -1,0 +1,14 @@
+.personal {
+  background: #009688;
+}
+
+.experience > :not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.img {
+  width: 100%;
+  position: relative;
+  border-radius: 10000px;
+  left: -15px;
+}
