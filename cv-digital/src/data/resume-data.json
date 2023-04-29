@@ -7,8 +7,16 @@
     "location": "Capital Federal, Buenos Aires, Argentina"
   },
   "about": "Soy apasionado por identificar y resolver problemas de todo tipo. En mis años de experiencia en el campo de la ingeniería de sistemas, he adquirido conocimientos en diversos campos. Mi enfoque principal es construir, guiar y liderar equipos de ingeniería.",
-  "strengths": [],
-  "languages": [],
+  "strengths": [
+    "Project Management",
+    "Product Management",
+    "Gestión de Equipos"
+  ],
+  "languages": [
+    { "name": "Español", "level": 5 },
+    { "name": "Ingles", "level": 4 },
+    { "name": "Portugues", "level": 2 }
+  ],
   "certs": [],
   "education": [
     {
