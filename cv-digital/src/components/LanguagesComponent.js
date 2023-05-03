@@ -19,6 +19,8 @@ const LanguagesComponent = (props) => {
 
   return (
     <>
+      <Typography variant={"h5"}>Lenguajes</Typography>
+
       {props.languages.map((language) => (
         <Grid container className="language-container" key={language.name}>
           <Grid item xs={6} className="language" key={language.name}>

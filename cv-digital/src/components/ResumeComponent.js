@@ -1,16 +1,11 @@
 import React from "react";
-import {
-  Divider,
-  Grid,
-  List,
-  ListItem,
-  ListSubheader,
-  Typography,
-} from "@mui/material";
+import { Divider, Grid } from "@mui/material";
 import ExperienceComponent from "./ExperienceComponent";
 import classes from "./ResumeComponent.module.css";
 import LanguagesComponent from "./LanguagesComponent";
 import PersonalDataComponent from "./PersonalDataComponent";
+import AboutComponent from "./AboutComponent";
+import CustomListComponent from "./CustomListComponent";
 
 const ResumeComponent = (props) => {
   return (
@@ -22,31 +17,21 @@ const ResumeComponent = (props) => {
           data={props.data.personalData}
         ></PersonalDataComponent>
         <Divider></Divider>
-        <Typography variant={"h5"}>Acerca de mí</Typography>
-        <Typography variant={"h6"}>{props.data.about}</Typography>
+        <AboutComponent about={props.data.about}></AboutComponent>
         <Divider></Divider>
-        <Typography variant={"h5"}>Lenguajes</Typography>
         <LanguagesComponent
           languages={props.data.languages}
         ></LanguagesComponent>
         <Divider></Divider>
-        <Typography variant={"h5"}>Fortalezas</Typography>
-        <List>
-          {props.data.strengths.map((strength) => (
-            <ListItem key={strength} disableGutters>
-              <Typography variant={"h6"}>{strength}</Typography>
-            </ListItem>
-          ))}
-        </List>
+        <CustomListComponent
+          title={"Fortalezas"}
+          list={props.data.strengths}
+        ></CustomListComponent>
         <Divider></Divider>
-        <Typography variant={"h5"}>Certificaciones</Typography>
-        <List>
-          {props.data.certs.map((certs) => (
-            <ListItem key={certs} disableGutters>
-              <Typography variant={"h6"}>{certs}</Typography>
-            </ListItem>
-          ))}
-        </List>
+        <CustomListComponent
+          title={"Certificaciones"}
+          list={props.data.certs}
+        ></CustomListComponent>
       </Grid>
       <Grid item md={8} xs={12} className={classes.experience}>
         <ExperienceComponent
