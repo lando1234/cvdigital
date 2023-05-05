@@ -1,77 +1,38 @@
 {
   "personalData": {
-    "name": "Matías Landau",
-    "email": "landaumatias@gmail.com",
-    "phone": "+5411 3671-8735",
-    "linkedin": "https://www.linkedin.com/in/matias-landau-codazzi/",
+    "name": "Federico Alem",
+    "email": "federicomartin25@outlook.com",
+    "phone": "+54 11 36039773",
+    "linkedin": "linkedin.com/in/federico-alem-891402197",
     "location": "Capital Federal, Buenos Aires, Argentina"
   },
-  "about": "Soy apasionado por identificar y resolver problemas de todo tipo. En mis años de experiencia en el campo de la ingeniería de sistemas, he adquirido conocimientos en diversos campos. Mi enfoque principal es construir, guiar y liderar equipos de ingeniería.",
-  "strengths": [
-    "Project Management",
-    "Product Management",
-    "Gestión de Equipos"
-  ],
-  "languages": [
-    { "name": "Español", "level": 5 },
-    { "name": "Ingles", "level": 4 },
-    { "name": "Portugues", "level": 2 }
-  ],
+  "about": "Soy una persona trabajadora y responsable que busca empleo que permita desarrollarme profesionalmente en el ambito de la informatica.",
+  "strengths": [],
+  "languages": [],
   "certs": [],
   "education": [
     {
-      "title": "Licenciado en Gestión de Tecnologías de Información",
-      "year": "2022 - 2025",
+      "title": "Ingeniero en Informatica",
+      "year": "2017 - Actualidad",
       "location": "Buenos Aires, Argentina",
       "institution": "UADE"
     },
     {
-      "title": "Ingeniería Informática",
-      "year": "2020 - 2022",
+      "title": "Bachiller en Ciencia Naturales",
+      "year": "2001 - 2012",
       "location": "Buenos Aires, Argentina",
-      "institution": "UADE"
-    },
-    {
-      "title": "Ingeniería en Sistemas de Información",
-      "year": "2016 - 2019",
-      "location": "Buenos Aires, Argentina",
-      "institution": "UTN"
-    },
-    {
-      "title": "Bioingeniería",
-      "year": "2012 - 2015",
-      "location": "Buenos Aires, Argentina",
-      "institution": "ITBA"
+      "institution": "Pbro. Dr. Antonio Saenz"
     }
+
   ],
   "experience": [
     {
-      "title": "Software Development Project Leader",
-      "year": "2021 - Actualidad",
+      "title": "Asistente",
+      "year": "2013 - Actualidad",
       "location": "Buenos Aires, Argentina",
-      "institution": "Mercadolibre",
-      "description": "Construcción de equipos multidisciplinarios. Preparación de objetivos de desarrollo personal y empresarial. Líder del equipo de Integraciones de Registro. Análisis y planificación de requisitos. Comunicación con partes interesadas clave. Análisis de resultados y toma de decisiones. Desarrollo y seguimiento de la trayectoria profesional.Metodologías Ágiles."
-    },
-    {
-      "title": "SR IT Analist",
-      "year": "2020 - 2021",
-      "location": "Buenos Aires, Argentina",
-      "institution": "Mercadolibre",
-      "description": "Mentoría de miembros del equipo. Coordinación de la implementación de funcionalidades transversales al equipo. Diseño de tracks técnicos del equipo."
-    },
-    {
-      "title": "SSR Full Stack Developer",
-      "year": "2019 - 2020",
-      "location": "Buenos Aires, Argentina",
-      "institution": "Despegar.com",
-      "description": "Seguimiento de Roadmaps técnicos de complejidad media y alta. Arquitectura y desarrollo de funcionalidades del equipo.Análisis y pruebas de nuevas funcionalidades en conjunto con el equipo de producto.Mentoría de recursos JR del equipo."
-    },
-    {
-      "title": "Full Stack Developer",
-      "year": "2016 - 2019",
-      "location": "Buenos Aires, Argentina",
-      "institution": "Cognisys SRL",
-      "description": "Diseño de arquitectura. Revisión de código. Gestión de bases de datos."
+      "institution": "Escribania Gonzalez",
+      "description": "Atencion telefonica de clientes, soporte contable de gastos, tareas administrativas en general, vigilancia y help desk nivel 1."
     }
+
   ]
 }
