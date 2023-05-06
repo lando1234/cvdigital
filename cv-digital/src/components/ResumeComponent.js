@@ -1,50 +1,61 @@
-import React from "react";
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 import { Divider, Grid } from "@mui/material";
 import ExperienceComponent from "./ExperienceComponent";
-import classes from "./ResumeComponent.module.css";
 import LanguagesComponent from "./LanguagesComponent";
 import PersonalDataComponent from "./PersonalDataComponent";
 import AboutComponent from "./AboutComponent";
 import CustomListComponent from "./CustomListComponent";
+import classes from "./ResumeComponent.module.css";
 
-const ResumeComponent = (props) => {
+const ResumeComponent = memo(({ data }) => {
+  const {
+    personalData,
+    about,
+    languages,
+    strengths,
+    certs,
+    experience,
+    education,
+  } = data;
+
   return (
     <Grid container spacing={4}>
-      <Grid item md={4} xs={12} className={classes.personal} pl={0}>
-        <img src="/foto-cv.jpg" alt="Foto CV" className={classes.img} />
-        <Divider></Divider>
-        <PersonalDataComponent
-          data={props.data.personalData}
-        ></PersonalDataComponent>
-        <Divider></Divider>
-        <AboutComponent about={props.data.about}></AboutComponent>
-        <Divider></Divider>
-        <LanguagesComponent
-          languages={props.data.languages}
-        ></LanguagesComponent>
-        <Divider></Divider>
-        <CustomListComponent
-          title={"Fortalezas"}
-          list={props.data.strengths}
-        ></CustomListComponent>
-        <Divider></Divider>
-        <CustomListComponent
-          title={"Certificaciones"}
-          list={props.data.certs}
-        ></CustomListComponent>
+      <Grid item md={4} xs={12} className={classes.personal}>
+        <Grid container pr={4} spacing={4} pt={2}>
+          <Grid item md={12} sm={6}>
+            <img
+              src={process.env.PUBLIC_URL + "/foto-cv.jpg"}
+              alt="Foto CV"
+              className={classes.img}
+            />
+          </Grid>
+          <Grid item md={12} sm={6}>
+            <PersonalDataComponent data={personalData} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12}>
+            <AboutComponent about={about} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12}>
+            <LanguagesComponent languages={languages} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12}>
+            <CustomListComponent title="Fortalezas" list={strengths} />
+          </Grid>
+          <Grid item xs={12} sm={6} md={12}>
+            <CustomListComponent title="Certificaciones" list={certs} />
+          </Grid>
+        </Grid>
       </Grid>
       <Grid item md={8} xs={12} className={classes.experience}>
         <ExperienceComponent
-          title={"Experiencia Laboral"}
-          experience={props.data.experience}
-        ></ExperienceComponent>
-        <ExperienceComponent
-          title={"Estudios"}
-          experience={props.data.education}
-        ></ExperienceComponent>
+          title="Experiencia Laboral"
+          experience={experience}
+        />
+        <ExperienceComponent title="Estudios" experience={education} />
       </Grid>
     </Grid>
   );
-};
+});
 
 export default ResumeComponent;

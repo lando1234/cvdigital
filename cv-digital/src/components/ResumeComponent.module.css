@@ -8,9 +8,7 @@
 
 .img {
   width: 100%;
-  position: relative;
   border-radius: 10000px;
-  left: -15px;
   margin-bottom: 2rem;
 }
 

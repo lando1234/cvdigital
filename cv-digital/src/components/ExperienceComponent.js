@@ -18,8 +18,8 @@ const ExperienceComponent = (props) => {
           {props.title}
         </Typography>
       </Grid>
-      {props.experience.map((el) => (
-        <ExperiencePart experience={el}></ExperiencePart>
+      {props.experience.map((el, index) => (
+        <ExperiencePart experience={el} key={index}></ExperiencePart>
       ))}
     </Grid>
   );

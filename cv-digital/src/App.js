@@ -7,7 +7,7 @@ import ResumeComponent from "./components/ResumeComponent";
 function App() {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className="container">
         <ResumeComponent data={data}></ResumeComponent>
       </Container>
     </>

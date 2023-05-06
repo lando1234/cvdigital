@@ -22,12 +22,8 @@ const LanguagesComponent = (props) => {
     <Box pt={2} pb={2}>
       <Typography className={classes.title}>Lenguajes</Typography>
 
-      {props.languages.map((language) => (
-        <Grid
-          container
-          className={classes["language-container"]}
-          key={language.name}
-        >
+      {props.languages.map((language, index) => (
+        <Grid container className={classes["language-container"]} key={index}>
           <Grid item xs={6}>
             <Typography className={classes.content}>{language.name}</Typography>
           </Grid>
