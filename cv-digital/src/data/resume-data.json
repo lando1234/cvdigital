@@ -6,9 +6,16 @@
     "linkedin": "linkedin.com/in/federico-alem-891402197",
     "location": "Capital Federal, Buenos Aires, Argentina"
   },
-  "about": "Soy una persona trabajadora y responsable que busca empleo que permita desarrollarme profesionalmente en el ambito de la informatica.",
-  "strengths": [],
-  "languages": [],
+  "about": "Soy una persona trabajadora y responsable que busca desarrollarse profesionalmente en el ambito de la informatica.",
+  "strengths": [
+    "Alto nivel de compromiso y responsabilidad",
+    "Abierto a aprender nuevas cosas"
+  ],
+  "languages": [
+    { "name":  "Español", "level": 5},
+    { "name":  "Ingles", "level": 4},
+    { "name":  "Frances", "level": 1}
+  ],
   "certs": [],
   "education": [
     {

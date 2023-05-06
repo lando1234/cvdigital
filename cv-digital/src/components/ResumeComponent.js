@@ -11,7 +11,7 @@ const ResumeComponent = (props) => {
   return (
     <Grid container spacing={4}>
       <Grid item md={4} xs={12} className={classes.personal} pl={0}>
-        <img src="/foto-cv.jpg" alt="Foto CV" className={classes.img} />
+        <img src=".src/fedecv.png" alt="FedeFoto CV" className={classes.img} />
         <Divider></Divider>
         <PersonalDataComponent
           data={props.data.personalData}
