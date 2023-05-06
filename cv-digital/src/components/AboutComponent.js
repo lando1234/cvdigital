@@ -1,12 +1,13 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
+import classes from "./CommonLayout.module.css";
 
 const AboutComponent = (props) => {
   return (
-    <>
-      <Typography variant={"h5"}>Acerca de mí</Typography>
-      <Typography variant={"h6"}>{props.about}</Typography>
-    </>
+    <Box className={classes.container} pt={2} pb={2}>
+      <Typography className={classes.title}>Acerca de mí</Typography>
+      <Typography className={classes.content}>{props.about}</Typography>
+    </Box>
   );
 };
 

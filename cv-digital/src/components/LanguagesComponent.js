@@ -1,7 +1,8 @@
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+import classes from "./LanguagesComponent.module.css";
 const LanguagesComponent = (props) => {
   const getStars = (skill) => {
     const empty = 5 - skill;
@@ -18,20 +19,26 @@ const LanguagesComponent = (props) => {
   };
 
   return (
-    <>
-      <Typography variant={"h5"}>Lenguajes</Typography>
+    <Box pt={2} pb={2}>
+      <Typography className={classes.title}>Lenguajes</Typography>
 
       {props.languages.map((language) => (
-        <Grid container className="language-container" key={language.name}>
-          <Grid item xs={6} className="language" key={language.name}>
-            <Typography variant={"h6"}>{language.name}</Typography>
+        <Grid
+          container
+          className={classes["language-container"]}
+          key={language.name}
+        >
+          <Grid item xs={6}>
+            <Typography className={classes.content}>{language.name}</Typography>
           </Grid>
-          <Grid item xs={6} className="skill" key={language.name}>
-            <Typography variant={"h6"}> {getStars(language.level)} </Typography>
+          <Grid item xs={6}>
+            <Typography className={classes.content}>
+              {getStars(language.level)}
+            </Typography>
           </Grid>
         </Grid>
       ))}
-    </>
+    </Box>
   );
 };
 

@@ -4,30 +4,35 @@ import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { Link } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
+import classes from "./PersonalDataComponent.module.css";
 
 const PersonalDataComponent = (props) => {
   return (
-    <>
-      <div className="pd-container">
-        <PersonIcon></PersonIcon> {props.data.name}
+    <Box pt={2} pb={2}>
+      <div className={`${classes.name} ${classes.data}`}>
+        <PersonIcon className={classes.icon}></PersonIcon>{" "}
+        <Typography>{props.data.name}</Typography>
       </div>
-      <div className="pd-container">
-        <AlternateEmailIcon></AlternateEmailIcon>
-        {props.data.email}
+      <div className={`${classes.email} ${classes.data}`}>
+        <AlternateEmailIcon className={classes.icon}></AlternateEmailIcon>
+        <Typography>{props.data.email}</Typography>
       </div>
-      <div className="pd-container">
-        <LocalPhoneIcon></LocalPhoneIcon>
-        {props.data.phone}
+      <div className={`${classes.phone} ${classes.data}`}>
+        <LocalPhoneIcon className={classes.icon}></LocalPhoneIcon>
+        <Typography>{props.data.phone}</Typography>
       </div>
-      <div className="pd-container">
-        <LocationOnIcon></LocationOnIcon>
-        {props.data.location}
+      <div className={`${classes.location} ${classes.data}`}>
+        <LocationOnIcon className={classes.icon}></LocationOnIcon>
+        <Typography>{props.data.location}</Typography>
       </div>
-      <div className="pd-container">
-        <LinkedInIcon></LinkedInIcon> <Link>{props.data.linkedin}</Link>
+      <div className={`${classes.linkedin} ${classes.data}`}>
+        <LinkedInIcon className={classes.icon}></LinkedInIcon>{" "}
+        <Link href={props.data.linkedin} target="_blank">
+          Perfil
+        </Link>
       </div>
-    </>
+    </Box>
   );
 };
 
