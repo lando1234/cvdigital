@@ -5,11 +5,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ResumeComponent from "./components/pages/ResumeComponent";
 import LoginComponent from "./components/pages/LoginComponent";
 import ContactForm from "./components/pages/ContactForm";
+import ContactList from "./components/pages/ContactList";
 
 const router = createBrowserRouter([
   { path: "resume", element: <ResumeComponent /> },
   { path: "login", element: <LoginComponent /> },
   { path: "contacto", element: <ContactForm /> },
+  { path: "listaContacto", element: <ContactList /> },
 ]);
 
 function App() {
