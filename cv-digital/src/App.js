@@ -8,6 +8,7 @@ import ContactForm from "./components/pages/ContactForm";
 import ContactList from "./components/pages/ContactList";
 
 const router = createBrowserRouter([
+  { path: "/", element: <ResumeComponent /> },
   { path: "resume", element: <ResumeComponent /> },
   { path: "login", element: <LoginComponent /> },
   { path: "contacto", element: <ContactForm /> },
