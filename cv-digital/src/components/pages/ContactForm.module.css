@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  width: 40%;
+}
+
+div.input {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .form {
+    width: 100%;
+  }
+  .container {
+    padding-right: 2rem;
+  }
+}
