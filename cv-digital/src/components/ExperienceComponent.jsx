@@ -6,14 +6,8 @@ import classes from "./ExperienceComponent.module.css";
 
 const ExperienceComponent = (props) => {
   return (
-    <Grid
-      container
-      className={classes["experience-container"]}
-      spacing={2}
-      pr={4}
-      pl={2}
-    >
-      <Grid item xs={12} mb={1}>
+    <Grid container className={classes["experience-container"]}>
+      <Grid item xs={12} mb={1} p={2}>
         <Typography className={classes.title} align={"left"} variant={"h4"}>
           {props.title}
         </Typography>

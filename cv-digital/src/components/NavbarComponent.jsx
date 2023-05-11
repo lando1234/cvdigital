@@ -3,14 +3,15 @@ import { AppBar } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { IconButton } from "@mui/material";
 import { Typography } from "@mui/material";
-import { Button } from "@mui/material";
 import { Box } from "@mui/material";
+import { NavLink } from "react-router-dom";
+import classes from "./NavbarComponent.module.css";
 
 const navItems = [];
 
 const NavbarComponent = () => {
   return (
-    <AppBar component="nav">
+    <AppBar component="nav" position="sticky" style={{ background: "#00796B" }}>
       <Toolbar>
         <IconButton
           color="inherit"
@@ -20,16 +21,35 @@ const NavbarComponent = () => {
         <Typography
           variant="h6"
           component="div"
-          sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+          className={classes.logo}
+          sx={{ display: { xs: "none", sm: "block" } }}
         >
-          MUI
+          ML
         </Typography>
-        <Box sx={{ display: { xs: "none", sm: "block" } }}>
-          {navItems.map((item) => (
-            <Button key={item} sx={{ color: "#fff" }}>
-              {item}
-            </Button>
-          ))}
+        <Box className={classes.gbcontainer}>
+          <NavLink
+            to="/contacto"
+            className={classes["link-button"]}
+            activeClassName={classes.active}
+          >
+            Contacto
+          </NavLink>
+          <NavLink
+            to="/resume"
+            className={classes["link-button"]}
+            activeClassName={classes.active}
+          >
+            Curriculum
+          </NavLink>
+        </Box>
+        <Box className={classes.logincontainer}>
+          <NavLink
+            to="/login"
+            className={classes["link-button"]}
+            activeClassName={classes.active}
+          >
+            Acceso
+          </NavLink>
         </Box>
       </Toolbar>
     </AppBar>

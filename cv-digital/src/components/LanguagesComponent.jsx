@@ -6,14 +6,14 @@ import classes from "./LanguagesComponent.module.css";
 const LanguagesComponent = (props) => {
   const getStars = (skill) => {
     const empty = 5 - skill;
-    const fullStar = <StarIcon></StarIcon>;
-    const emptyStar = <StarBorderIcon></StarBorderIcon>;
     const resultArray = [];
     for (let i = 0; i < skill; i++) {
-      resultArray.push(fullStar);
+      resultArray.push(<StarIcon key={`full-star-${i}`}></StarIcon>);
     }
     for (let i = 0; i < empty; i++) {
-      resultArray.push(emptyStar);
+      resultArray.push(
+        <StarBorderIcon key={`empty-star-${i}`}></StarBorderIcon>
+      );
     }
     return resultArray;
   };
