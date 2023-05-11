@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+*,
+html {
+  box-sizing: border-box;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +19,7 @@
 }
 
 .App-header {
-  background-color: #DAF7A6;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -34,5 +39,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  div.container {
+    padding-right: 0;
   }
 }
