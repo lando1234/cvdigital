@@ -27,27 +27,15 @@ const NavbarComponent = () => {
           ML
         </Typography>
         <Box className={classes.gbcontainer}>
-          <NavLink
-            to="/contacto"
-            className={classes["link-button"]}
-            activeClassName={classes.active}
-          >
+          <NavLink to="/contacto" className={classes["link-button"]}>
             Contacto
           </NavLink>
-          <NavLink
-            to="/resume"
-            className={classes["link-button"]}
-            activeClassName={classes.active}
-          >
+          <NavLink to="/resume" className={classes["link-button"]}>
             Curriculum
           </NavLink>
         </Box>
         <Box className={classes.logincontainer}>
-          <NavLink
-            to="/login"
-            className={classes["link-button"]}
-            activeClassName={classes.active}
-          >
+          <NavLink to="/login" className={classes["link-button"]}>
             Acceso
           </NavLink>
         </Box>

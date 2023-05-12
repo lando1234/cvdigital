@@ -45,5 +45,6 @@ html {
 @media only screen and (max-width: 900px) {
   div.container {
     padding-right: 0;
+    padding-left: 0;
   }
 }

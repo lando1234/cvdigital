@@ -17,3 +17,13 @@
 .logo {
   padding: 0 2rem;
 }
+
+@media only screen and (max-width: 400) {
+  .logo {
+    display: none;
+  }
+
+  .link-button {
+    padding: 1rem;
+  }
+}
