@@ -1,7 +1,12 @@
 .tabla * {
-  color: #777;
+  color: #000000;
+}
+
+.tabla columns nombre{
+    background-color: grey;
 }
 
 .tabla button {
   color: #1976d2;
+  background-color: #df3a01;
 }
