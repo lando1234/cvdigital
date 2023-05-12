@@ -26,4 +26,8 @@
   .link-button {
     padding: 1rem;
   }
+  .gbcontainer {
+    flex-grow: 0;
+    padding: 0 2rem;
+  }
 }
