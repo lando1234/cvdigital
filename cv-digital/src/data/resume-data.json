@@ -16,7 +16,9 @@
     { "name":  "Ingles", "level": 4},
     { "name":  "Frances", "level": 1}
   ],
-  "certs": [],
+  "certs": [
+    "First Certificate in English"
+  ],
   "education": [
     {
       "title": "Ingeniero en Informatica",

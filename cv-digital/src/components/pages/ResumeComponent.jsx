@@ -17,26 +17,26 @@ const ResumeComponent = memo(() => {
       <Grid container>
         <Grid item md={4} xs={12} className={classes.personal} p={2}>
           <Grid container>
-            <Grid item md={12} sm={6}>
+            <Grid item md={12} sm={6} p={1}>
               <img
-                src={process.env.PUBLIC_URL + "/fedecv.png"}
+                src={process.env.PUBLIC_URL + "/foto-cv.jpg"}
                 alt="Foto CV"
                 className={classes.img}
               />
             </Grid>
-            <Grid item md={12} sm={6}>
+            <Grid item md={12} sm={6} p={1}>
               <PersonalDataComponent data={data.personalData} />
             </Grid>
-            <Grid item xs={12} sm={6} md={12}>
+            <Grid item xs={12} sm={6} md={12} p={1}>
               <AboutComponent about={data.about} />
             </Grid>
-            <Grid item xs={12} sm={6} md={12}>
+            <Grid item xs={12} sm={6} md={12} p={1}>
               <LanguagesComponent languages={data.languages} />
             </Grid>
-            <Grid item xs={12} sm={6} md={12}>
+            <Grid item xs={12} sm={6} md={12} p={1}>
               <CustomListComponent title="Fortalezas" list={data.strengths} />
             </Grid>
-            <Grid item xs={12} sm={6} md={12}>
+            <Grid item xs={12} sm={6} md={12} p={1}>
               <CustomListComponent title="Certificaciones" list={data.certs} />
             </Grid>
           </Grid>

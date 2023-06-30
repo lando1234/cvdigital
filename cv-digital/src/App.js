@@ -6,7 +6,6 @@ import ResumeComponent from "./components/pages/ResumeComponent";
 import LoginComponent from "./components/pages/LoginComponent";
 import ContactForm from "./components/pages/ContactForm";
 import ContactList from "./components/pages/ContactList";
-import NavbarComponent from "./components/NavbarComponent";
 
 const router = createBrowserRouter([
   { path: "/", element: <ResumeComponent /> },

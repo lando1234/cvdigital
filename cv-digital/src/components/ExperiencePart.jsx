@@ -28,15 +28,19 @@ const ExperiencePart = (props) => {
           {props.experience.location}
         </Typography>
       </Grid>
-      <Grid item xs={12} p={2}>
-        <Typography
-          align={"left"}
-          className={classes.description}
-          variant={"body1"}
-        >
-          {props.experience.description}
-        </Typography>
-      </Grid>
+      {props.experience.description ? (
+        <Grid item xs={12} p={2}>
+          <Typography
+            align={"left"}
+            className={classes.description}
+            variant={"body1"}
+          >
+            {props.experience.description}
+          </Typography>
+        </Grid>
+      ) : (
+        <></>
+      )}
       <Grid item xs={12} p={2}>
         <Divider></Divider>
       </Grid>

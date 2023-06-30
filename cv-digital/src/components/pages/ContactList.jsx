@@ -1,33 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NavbarComponent from "../NavbarComponent";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import classes from "./ContactList.module.css";
-const contacts = [
-  {
-    id: 1,
-    nombre: "John Doe",
-    email: "john.doe@example.com",
-    motivo: "Question",
-  },
-  {
-    id: 2,
-    nombre: "Jane Doe",
-    email: "jane.doe@example.com",
-    motivo: "Feedback",
-  },
-  {
-    id: 3,
-    nombre: "Bob Smith",
-    email: "bob.smith@example.com",
-    motivo: "Complaint",
-  },
-];
 
 const columns = [
   { field: "nombre", headerName: "Nombre", width: 200 },
-  { field: "email", headerName: "Email", width: 300 },
-  { field: "motivo", headerName: "Motivo", width: 500 },
+  { field: "email", headerName: "Email", width: 200 },
+  { field: "telefono", headerName: "Teléfono", width: 200 },
+  { field: "motivo", headerName: "Motivo", width: 300 },
   {
     field: "contacto",
     headerName: "Contacto",
@@ -40,7 +21,29 @@ const columns = [
   },
 ];
 
+const getContacts = async () => {
+  const response = await fetch("http://localhost:8000/api/contactos");
+  const contactList = await response.json();
+
+  return contactList.map((el, index) => {
+    return {
+      id: index + 1,
+      nombre: el.nombre,
+      email: el.email,
+      motivo: el.descripcion,
+      telefono: el.telefono,
+    };
+  });
+};
+
 const ContactList = () => {
+  const [contacts, setContacts] = useState([]);
+  useEffect(() => {
+    getContacts().then((res) => {
+      setContacts(res);
+    });
+  }, []);
+
   return (
     <>
       <NavbarComponent></NavbarComponent>;
