@@ -7,7 +7,7 @@ import NavbarComponent from "../NavbarComponent";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-export default function SignIn() {
+export default function Register() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -20,23 +20,25 @@ export default function SignIn() {
     );
     const areUsers = await registeredResponse.json();
 
-    if (areUsers.length === 0) {
-      navigate("/registrar");
+    if (areUsers.length > 0) {
+      const loggedIn = sessionStorage.getItem("token");
+      if (loggedIn) {
+        navigate("/listaContacto");
+      } else {
+        navigate("/login");
+      }
     }
   };
 
   useEffect(() => {
-    const loggedIn = sessionStorage.getItem("token");
-    if (loggedIn) {
-      navigate("/listaContacto");
-    }
+    handleUsers();
   }, [navigate]);
 
   const handleSubmit = async (event) => {
     setError(null);
     event.preventDefault();
 
-    const response = await fetch("http://localhost:8000/api/usuarios/login", {
+    const response = await fetch("http://localhost:8000/api/usuarios/", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -47,12 +49,11 @@ export default function SignIn() {
         password: pass,
       }),
     });
-    const loginResponse = await response.json();
-    if (response.status === 200) {
-      sessionStorage.setItem("token", loginResponse.token);
-      navigate("/listaContacto");
+
+    if (response.status === 201) {
+      navigate("/login");
     } else {
-      setError("Error al autenticarse");
+      setError("Error al registrarse");
     }
   };
 
@@ -69,7 +70,7 @@ export default function SignIn() {
           }}
         >
           <Typography component="h1" variant="h5" color={"#009688"}>
-            Log In
+            Registrarse
           </Typography>
           <Box
             component="form"
@@ -107,7 +108,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2, background: "#009688" }}
             >
-              Log In
+              Registrarse
             </Button>
           </Box>
         </Box>

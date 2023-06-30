@@ -11,7 +11,35 @@ class UsuariosController {
     }
     return instance;
   }
+  async getUsuarios(req, res) {
+    try {
+      const users = await UsuariosService.getUsers();
+      return res.status(200).json(users);
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({
+        method: "getUsers",
+        message: err,
+      });
+    }
+  }
 
+  async createUsuario(req, res) {
+    try {
+      let newUser = await UsuariosService.createUser(req.body);
+
+      return res.status(201).json({
+        message: "Created!",
+        usuario: newUser,
+      });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({
+        method: "createUsuario",
+        message: err.message,
+      });
+    }
+  }
   async login(req, res) {
     try {
       const { email, password } = req.body;

@@ -9,9 +9,25 @@ import classes from "./NavbarComponent.module.css";
 
 const NavbarComponent = () => {
   const [loggedIn, setloggedIn] = useState(null);
+  const [registered, setRegistered] = useState(true);
+
+  const checkStatus = async () => {
+    const registeredResponse = await fetch(
+      "http://localhost:8000/api/usuarios/"
+    );
+    const areUsers = await registeredResponse.json();
+
+    if (areUsers.length > 0) {
+      const logged = sessionStorage.getItem("token");
+      setloggedIn(logged);
+      setRegistered(true);
+    } else {
+      setRegistered(false);
+    }
+  };
+
   useEffect(() => {
-    const logged = sessionStorage.getItem("token");
-    setloggedIn(logged);
+    checkStatus();
   }, []);
   return (
     <AppBar component="nav" position="sticky" style={{ background: "#00796B" }}>
@@ -35,18 +51,28 @@ const NavbarComponent = () => {
           <NavLink to="/resume" className={classes["link-button"]}>
             Curriculum
           </NavLink>
-          <NavLink to="/contacto" className={classes["link-button"]}>
-            Contacto
-          </NavLink>
-        </Box>
-        <Box className={classes.logincontainer}>
-          {loggedIn ? (
-            <NavLink to="/listaContacto" className={classes["link-button"]}>
-              Ver lista de contactos
+          {registered ? (
+            <NavLink to="/contacto" className={classes["link-button"]}>
+              Contacto
             </NavLink>
           ) : (
-            <NavLink to="/login" className={classes["link-button"]}>
-              Acceso
+            <></>
+          )}
+        </Box>
+        <Box className={classes.logincontainer}>
+          {registered ? (
+            loggedIn ? (
+              <NavLink to="/listaContacto" className={classes["link-button"]}>
+                Ver lista de contactos
+              </NavLink>
+            ) : (
+              <NavLink to="/login" className={classes["link-button"]}>
+                Acceso
+              </NavLink>
+            )
+          ) : (
+            <NavLink to="/registrar" className={classes["link-button"]}>
+              Registrarse
             </NavLink>
           )}
         </Box>
