@@ -3,6 +3,7 @@ import NavbarComponent from "../NavbarComponent";
 import { DataGrid } from "@mui/x-data-grid";
 import { Button } from "@mui/material";
 import classes from "./ContactList.module.css";
+import { useNavigate } from "react-router-dom";
 
 const columns = [
   { field: "nombre", headerName: "Nombre", width: 200 },
@@ -38,11 +39,17 @@ const getContacts = async () => {
 
 const ContactList = () => {
   const [contacts, setContacts] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     getContacts().then((res) => {
       setContacts(res);
     });
   }, []);
+
+  const logout = () => {
+    sessionStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <>
@@ -50,6 +57,7 @@ const ContactList = () => {
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid rows={contacts} columns={columns} className={classes.tabla} />
       </div>
+      <Button onClick={logout}>Cerrar Sesión</Button>
     </>
   );
 };

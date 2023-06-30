@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AppBar } from "@mui/material";
 import { Toolbar } from "@mui/material";
 import { IconButton } from "@mui/material";
@@ -8,6 +8,11 @@ import { NavLink } from "react-router-dom";
 import classes from "./NavbarComponent.module.css";
 
 const NavbarComponent = () => {
+  const [loggedIn, setloggedIn] = useState(null);
+  useEffect(() => {
+    const logged = sessionStorage.getItem("token");
+    setloggedIn(logged);
+  }, []);
   return (
     <AppBar component="nav" position="sticky" style={{ background: "#00796B" }}>
       <Toolbar>
@@ -35,9 +40,15 @@ const NavbarComponent = () => {
           </NavLink>
         </Box>
         <Box className={classes.logincontainer}>
-          <NavLink to="/login" className={classes["link-button"]}>
-            Acceso
-          </NavLink>
+          {loggedIn ? (
+            <NavLink to="/listaContacto" className={classes["link-button"]}>
+              Ver lista de contactos
+            </NavLink>
+          ) : (
+            <NavLink to="/login" className={classes["link-button"]}>
+              Acceso
+            </NavLink>
+          )}
         </Box>
       </Toolbar>
     </AppBar>
