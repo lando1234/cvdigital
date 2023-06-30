@@ -7,8 +7,6 @@ import { Box } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import classes from "./NavbarComponent.module.css";
 
-const navItems = [];
-
 const NavbarComponent = () => {
   return (
     <AppBar component="nav" position="sticky" style={{ background: "#00796B" }}>
@@ -24,14 +22,16 @@ const NavbarComponent = () => {
           className={classes.logo}
           sx={{ display: { xs: "none", sm: "block" } }}
         >
-          ML
+          <NavLink to="/resume" className={classes.linklogo}>
+            MLC
+          </NavLink>
         </Typography>
         <Box className={classes.gbcontainer}>
-          <NavLink to="/contacto" className={classes["link-button"]}>
-            Contacto
-          </NavLink>
           <NavLink to="/resume" className={classes["link-button"]}>
             Curriculum
+          </NavLink>
+          <NavLink to="/contacto" className={classes["link-button"]}>
+            Contacto
           </NavLink>
         </Box>
         <Box className={classes.logincontainer}>

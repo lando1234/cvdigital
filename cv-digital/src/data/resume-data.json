@@ -1,6 +1,6 @@
 {
   "personalData": {
-    "name": "Matías Landau",
+    "name": "Matías Landau Codazzi",
     "email": "landaumatias@gmail.com",
     "phone": "+5411 3671-8735",
     "linkedin": "https://www.linkedin.com/in/matias-landau-codazzi/",
@@ -17,7 +17,11 @@
     { "name": "Ingles", "level": 4 },
     { "name": "Portugues", "level": 2 }
   ],
-  "certs": [],
+  "certs": [
+    "First Certificate in English",
+    "Certificate of Advanced English",
+    "Reconocimiento al Merito Conaiisi 2016"
+  ],
   "education": [
     {
       "title": "Licenciado en Gestión de Tecnologías de Información",

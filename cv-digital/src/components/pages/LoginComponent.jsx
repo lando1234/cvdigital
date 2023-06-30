@@ -5,17 +5,44 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import NavbarComponent from "../NavbarComponent";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function SignIn() {
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
+
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const loggedIn = sessionStorage.getItem("token");
+    if (loggedIn) {
+      navigate("/listaContacto");
+    }
+  }, [navigate]);
+
+  const handleSubmit = async (event) => {
+    setError(null);
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+
+    const response = await fetch("http://localhost:8000/api/usuarios/login", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        password: pass,
+      }),
     });
-    navigate("/listaContacto");
+    const loginResponse = await response.json();
+    if (response.status === 200) {
+      sessionStorage.setItem("token", loginResponse.token);
+      navigate("/listaContacto");
+    } else {
+      setError("Error al autenticarse");
+    }
   };
 
   return (
@@ -41,6 +68,8 @@ export default function SignIn() {
           >
             <TextField
               margin="normal"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
               fullWidth
               id="email"
@@ -51,6 +80,8 @@ export default function SignIn() {
             />
             <TextField
               margin="normal"
+              value={pass}
+              onChange={(e) => setPass(e.target.value)}
               required
               fullWidth
               name="password"
@@ -69,6 +100,7 @@ export default function SignIn() {
             </Button>
           </Box>
         </Box>
+        {error && <Typography color="red">{error}</Typography>}
       </Container>
     </>
   );
