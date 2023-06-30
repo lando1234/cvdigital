@@ -20,8 +20,11 @@
     "express-router": "^0.0.1",
     "express-validator": "^7.0.1",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.3.0",
+    "mongoose": "^7.3.1",
     "mongoose-schema": "^0.0.7",
-    "swagger-autogen": "^2.23.4"
+    "schema": "^0.2.1",
+    "swagger": "^0.7.5",
+    "swagger-autogen": "^2.23.4",
+    "swagger-ui-express": "^4.6.3"
   }
 }

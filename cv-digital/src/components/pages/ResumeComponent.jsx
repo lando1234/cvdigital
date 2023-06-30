@@ -19,7 +19,7 @@ const ResumeComponent = memo(() => {
           <Grid container>
             <Grid item md={12} sm={6} p={1}>
               <img
-                src={process.env.PUBLIC_URL + "/foto-cv.jpg"}
+                src={process.env.PUBLIC_URL + "/fedecv.png"}
                 alt="Foto CV"
                 className={classes.img}
               />

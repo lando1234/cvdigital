@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use("/api/contactos", require("./src/routes/contactos.routes"));
-app.use("/api/usuarios", require("./src/routes/usuarios.routes"));
+app.use("/api/usuarios", require("./src/routes/Usuarios.routes"));
 
 app.listen(process.env.PORT, () => {
   console.log("app listening on PORT: " + process.env.PORT);
